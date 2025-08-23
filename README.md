@@ -40,3 +40,4 @@ kubectl apply -f k8s-fishies-terminal-deployment.yaml
 ssh fish@<node-ip> -p 30288
 ```
 
+![Screenshot](screenshot.png)
