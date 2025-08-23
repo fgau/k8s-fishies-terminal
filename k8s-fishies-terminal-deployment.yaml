@@ -1,0 +1,40 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: terminal-fishies
+  labels:
+    app: terminal-fishies
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: terminal-fishies
+  template:
+    metadata:
+      labels:
+        app: terminal-fishies
+    spec:
+      containers:
+        - name: terminal-fishies
+          image: docker_image:1.0.0   # replace with your docker image
+          command: ["/usr/sbin/sshd", "-D"]
+      imagePullSecrets:
+        - name: regcred
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: terminal-fishies-service
+  labels:
+    app: terminal-fishies
+spec:
+  selector:
+    app: terminal-fishies
+  ports:
+    - protocol: TCP
+      port: 22         # cluster port
+      targetPort: 22
+      nodePort: 30288  # fixed external port
+  type: NodePort
