@@ -27,8 +27,10 @@ image.
 - **service**: exposes the pod via a NodePort service on port 30288, mapping to
 the container’s SSH port (22).
 
-### deploy the docker image to your k8s cluster ```bash kubectl apply -f
-k8s-fishies-terminal-deployment.yaml ```
+### deploy the docker image to your k8s cluster
+```bash
+kubectl apply -f k8s-fishies-terminal-deployment.yaml
+```
 
 ### the funny part
 
