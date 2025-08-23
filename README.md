@@ -26,6 +26,7 @@ docker push docker_image:1.0.0
 as the entrypoint. it uses a private registry secret (regcred) to pull the
 image.
 - **secret**: `create secret generic regcred --from-file=.dockerconfigjson=/home/<your userhome>/.docker/config.json --type=kubernetes.io/dockerconfigjson`
+    - this link should also help: [https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/)
 - **service**: exposes the pod via a NodePort service on port 30288, mapping to
 the container’s SSH port (22).
 
