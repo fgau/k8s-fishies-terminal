@@ -14,10 +14,12 @@ you can find the original source for the fishies here:
 - prepares the ssh runtime directory
 - runs `sshd` in the foreground as the container entrypoint
 
-### build an push the docker image to your registry ```bash docker build -t
-docker_image:1.0.0 . -f Dockerfile
+### build an push the docker image to your registry
+```bash
+docker build -t docker_image:1.0.0 . -f Dockerfile
 
-docker push docker_image:1.0.0 ```
+docker push docker_image:1.0.0
+```
 
 ### kubernetes manifests
 - **deployment**: runs one replica of the terminal-fishies container with sshd
@@ -34,5 +36,7 @@ kubectl apply -f k8s-fishies-terminal-deployment.yaml
 
 ### the funny part
 
-```bash ssh fish@<node-ip> -p 30288 ```
+```bash
+ssh fish@<node-ip> -p 30288
+```
 
