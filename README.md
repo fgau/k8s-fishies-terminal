@@ -14,7 +14,7 @@ you can find the original source for the fishies here:
 - prepares the ssh runtime directory
 - runs `sshd` in the foreground as the container entrypoint
 
-### build an push the docker image to your registry
+### build and push the docker image to your registry
 ```bash
 docker build -t docker_image:1.0.0 . -f Dockerfile
 
